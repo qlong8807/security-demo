@@ -1,0 +1,40 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>登录页面</title>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/>
+    <link rel="stylesheet" type="text/css" href="https://www.layuicdn.com/layui/css/layui.css" />
+    <script src="https://www.layuicdn.com/layui-v2.5.5/layui.js"></script>
+</head>
+<body>
+<form class="layui-form" action="/login" method="post">
+    <div class="layui-input-inline">
+        <input type="hidden" th:name="${_csrf.parameterName}" th:value="${_csrf.token}"/>
+        <input type="text" name="username" required
+               placeholder="用户名" autocomplete="off" class="layui-input">
+    </div>
+    <div class="layui-input-inline">
+        <input type="password" name="password" required  placeholder="密码" autocomplete="off"
+               class="layui-input">
+    </div>
+    <div class="layui-input-inline login-btn">
+        <button id="btnLogin" lay-submit lay-filter="*" class="layui-btn">登录</button>
+    </div>
+    <div class="form-message">
+        <label th:text="${error}"></label>
+        <label th:text="${msg}"></label>
+    </div>
+</form>
+<table>
+    <tr><td>No.</td><td>UID</td><td>姓名</td><td>年龄</td><td>偶数</td><td>奇数</td></tr>
+    <tr th:each="user,memberStat:${users}">
+        <td th:text="${memberStat.index + 1}"></td>
+        <td th:text="${user.id}"></td>
+        <td th:text="${user.username}"></td>
+        <td th:text="${user.password}"></td>
+        <td th:text="${memberStat.even}"></td>
+        <td th:text="${memberStat.odd}"></td>
+    </tr>
+</table>
+</body>
+</html>
