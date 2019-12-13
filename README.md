@@ -16,7 +16,7 @@
 ## security 需实现以下类
 ### 2.1 自定义 Spring Security 配置
 <details>
-<summary>CLICK ME</summary>
+<summary>查看代码</summary>
 
 ```java
 /**
@@ -101,7 +101,12 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter{
 }
 ```
 </details>
+
 ### 2.2 自定义实现 UserDetails 接口，扩展属性
+
+<details>
+<summary>查看代码</summary>
+
 ```java
 public class UserEntity implements UserDetails {
 
@@ -196,8 +201,14 @@ public class UserEntity implements UserDetails {
 
 }
 ```
+</details>
+
 
 ### 2.3 自定义实现 UserDetailsService 接口
+
+<details>
+<summary>查看代码</summary>
+
 ```java
 /**
  * 获取用户相关信息
@@ -241,8 +252,14 @@ public class UserDetailServiceImpl implements UserDetailsService {
 
 }
 ```
+</details>
+
 
 ### 2.4 自定义实现 URL 权限控制
+
+<details>
+<summary>查看代码</summary>
+
 
 ```java
 /**
@@ -271,8 +288,14 @@ public class RbacPermission{
     }
 }
 ```
+</details>
+
 
 ### 2.5 实现 AccessDeniedHandler
+
+<details>
+<summary>查看代码</summary>
+
 ```java
 /**
  * 处理无权请求
@@ -322,8 +345,14 @@ public class CustomAccessDeniedHandler implements AccessDeniedHandler {
 
 }
 ```
+</details>
+
 
 ### 2.6 相关 Controller
+
+<details>
+<summary>查看代码</summary>
+
 ```java
 /**
  * 登录/退出跳转
@@ -418,8 +447,14 @@ public class HttptestController {
     }
 }
 ```
+</details>
+
 
 ### 2.7 相关 html 页面
+
+<details>
+<summary>查看代码</summary>
+
 ```html
 //登录页面
 
@@ -497,5 +532,7 @@ public class HttptestController {
         });
     </script>
 ```
+</details>
+
 
 
