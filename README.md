@@ -15,6 +15,9 @@
 1. 创建用户表,角色表,资源表,用户角色表,角色资源表
 ## security 需实现以下类
 ### 2.1 自定义 Spring Security 配置
+<details>
+<summary>CLICK ME</summary>
+
 ```java
 /**
 prePostEnabled :决定Spring Security的前注解是否可用 [@PreAuthorize,@PostAuthorize,..]
@@ -97,7 +100,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter{
     }
 }
 ```
-
+</details>
 ### 2.2 自定义实现 UserDetails 接口，扩展属性
 ```java
 public class UserEntity implements UserDetails {
